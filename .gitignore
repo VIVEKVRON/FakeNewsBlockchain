@@ -1,0 +1,148 @@
+# ==============================================================================
+# FakeNewsBlockchain - Git Ignore Rules
+# Protects credentials, databases, multi-GB ML checkpoints, caches, and build outputs.
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# Environment variables & secrets (preserve safe template)
+# ------------------------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.secret
+
+# ------------------------------------------------------------------------------
+# Python / Virtual environments / Test & Lint caches
+# ------------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.venv/
+venv/
+ENV/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+uv-cache/
+
+# ------------------------------------------------------------------------------
+# Large ML model weights, checkpoints, FAISS indexes & datasets
+# ------------------------------------------------------------------------------
+Requirements/
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.index
+*.faiss
+*.spm
+*.onnx
+*.h5
+*.npy
+*.npz
+*.parquet
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.7z
+
+# ------------------------------------------------------------------------------
+# SQLite operational databases, backups & runtime uploads (keep .gitkeep)
+# ------------------------------------------------------------------------------
+*.db
+*.sqlite
+*.sqlite3
+*.db-wal
+*.db-shm
+*.bak
+data/database/*.db
+data/news_cache.db
+data/news_cache/
+data/uploads/*
+!data/database/.gitkeep
+!data/news_cache/.gitkeep
+!data/uploads/.gitkeep
+
+# ------------------------------------------------------------------------------
+# Node.js / Frontend / TypeScript build artifacts
+# ------------------------------------------------------------------------------
+node_modules/
+frontend/dist/
+dist-ssr/
+.vite/
+.pnp
+.pnp.js
+coverage/
+.next/
+out/
+*.tsbuildinfo
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ------------------------------------------------------------------------------
+# Hardhat / Blockchain build artifacts (keep contracts/, test/, scripts/, deployments/*.json)
+# ------------------------------------------------------------------------------
+artifacts/
+cache/
+typechain/
+typechain-types/
+blockchain/artifacts/
+blockchain/cache/
+blockchain/typechain/
+blockchain/typechain-types/
+
+# ------------------------------------------------------------------------------
+# Scratch scripts, generated certificates, logs & temporary files
+# ------------------------------------------------------------------------------
+scratch/
+extracted_qr.png
+FakeNewsBlockchain_Certificate_*.pdf
+logs/*.log
+logs/*
+!logs/.gitkeep
+*.log
+*.tmp
+*.temp
+
+# ------------------------------------------------------------------------------
+# IDE / OS-specific files
+# ------------------------------------------------------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
